@@ -1,4 +1,4 @@
-## If Equals Little Research
+## If Assignment Little Research
 
 ### In this research I've decided to find the percentage of the languages that support this syntax and the languages that shows erros when you use it.
 
