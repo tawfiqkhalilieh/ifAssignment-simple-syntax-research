@@ -16,7 +16,7 @@ else -> print("No")
 
 <img src="./results.png"/>
 
-### I'll go over 11 new languages and show if they support this syntax or forbidd it.
+### I'll go over 12 programming languages and show if they support this syntax or forbidd it.
 
 #### Language List:
 
@@ -31,6 +31,7 @@ else -> print("No")
     - python
     - ruby
     - typescipt
+    - Assembly
 
 <hr>
 
@@ -260,6 +261,53 @@ app();
 ```
 
 #### The result of this test should be ovious because we already have the output "Hello" from javascript.
+
+<hr>
+
+### Assembly
+
+- code used to test:
+
+```asm
+section .data
+    hello db "Hello", 0
+    no db "No", 0
+section .text
+global main
+
+main:
+    ; Initialize x to 5
+    mov rax, 5
+
+    ; Check if x is equal to 15
+    cmp rax, mov rax, 20
+    je truthy_block  ; Jump if equal
+
+    ; If not equal (falsy), print "No"
+    mov rax, 1            ; syscall number for write
+    mov rdi, 1            ; file descriptor (stdout)
+    mov rsi, no           ; pointer to the string
+    mov rdx, 2            ; length of the string
+    syscall
+    jmp end_if
+
+truthy_block:
+    ; If equal (truthy), print "Hello"
+    mov rax, 1            ; syscall number for write
+    mov rdi, 1            ; file descriptor (stdout)
+    mov rsi, hello        ; pointer to the string
+    mov rdx, 5            ; length of the string
+    syscall
+
+end_if:
+    ; Exit the program
+    mov rax, 60           ; syscall number for exit
+    xor rdi, rdi          ; exit status: 0
+    syscall
+
+```
+
+#### The this code crashed, so this means that Assembly doesn't support this syntax
 
 <hr>
 
