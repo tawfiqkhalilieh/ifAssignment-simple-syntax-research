@@ -30,6 +30,8 @@ for root, dirs, files in os.walk(base_directory):
 
 # Count the occurrences of each value
 data_counts = {}
+
+print(results_dict)
 for value in results_dict.values():
     if value in data_counts:
         data_counts[value] += 1
